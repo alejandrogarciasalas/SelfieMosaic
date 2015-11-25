@@ -3,10 +3,19 @@ float xoffset,yoffset;
 float rxoffset,ryoffset;
 
 
+import peasy.*;
+
+PeasyCam cam;
+
 Grid grid;
 
 void setup(){
-  size(800,600,P3D);
+  //size(800,600,P3D);
+  fullScreen(P3D);
+  cam = new PeasyCam(this, 0, 0, 0, 50);
+  cam.setMinimumDistance(100);
+  cam.setMaximumDistance(10000);
+  
   frameRate(30);
   background(0);
   imageMode(CENTER);
