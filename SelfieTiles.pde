@@ -1,20 +1,18 @@
+import peasy.*;
+PeasyCam cam;
+
 float xmouse,ymouse;
 float xoffset,yoffset;
 float rxoffset,ryoffset;
-
-
-import peasy.*;
-
-PeasyCam cam;
 
 Grid grid;
 
 void setup(){
   //size(800,600,P3D);
   fullScreen(P3D);
-  cam = new PeasyCam(this, 0, 0, 0, 50);
-  cam.setMinimumDistance(100);
-  cam.setMaximumDistance(10000);
+  cam = new PeasyCam(this, 10);
+  cam.setMinimumDistance(500);
+  cam.setMaximumDistance(100000);
   
   frameRate(30);
   background(0);
@@ -35,7 +33,7 @@ void draw(){
   
   background(0);
   
-  translate(xoffset,yoffset,-2000);
+  //translate(xoffset,yoffset, 10);
   rotateY(radians(rxoffset));
   rotateX(radians(ryoffset));
   
